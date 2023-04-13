@@ -6,13 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="413dp"
+        android:layout_height="525dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/corners"
+            android:drawableLeft="@drawable/ic_baseline_water_drop_24"
+            android:padding="45dp" />
+
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/corners"
+            android:text="Date" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="438dp"
+        android:layout_height="731dp"
+        android:background="@drawable/decoration"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        
+    </View>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
