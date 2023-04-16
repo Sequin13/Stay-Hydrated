@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">projekt_apki</string>
     <string name="plus">+</string>
+    <string name="plusik">+</string>
     <string-array name="opcje_spinnera">
         <item>Szklanka 200 ml</item>
         <item>Kubek 300 ml</item>
@@ -9,5 +10,6 @@
         <item>Butelka 1 l</item>
         <item>Butelka 1,5 l</item>
         <item>Butla 5 l</item>
+        <item>Więcej opcji</item>
     </string-array>
 </resources>
