@@ -13,6 +13,20 @@
         android:theme="@style/Theme.Projekt_apki"
         tools:targetApi="31">
         <activity
+            android:name=".MemoryGame"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".GamesLobby"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MoreOptions"
             android:exported="false">
             <meta-data

@@ -37,7 +37,8 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="60dp"
             android:background="@drawable/corners"
-            android:text="Date" />
+            android:onClick="gamesOnClick"
+            android:text="Games" />
 
     </LinearLayout>
 
@@ -52,7 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.0">
 
-        
+
     </View>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
