@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        bottomNavigation.setCount(ID_ACHIEVENETS,"3");
+        bottomNavigation.setCount(ID_ACHIEVENETS,"4");
         bottomNavigation.show(ID_HOME,true);
     }
     public void waterOnClick (View view)
