@@ -12,5 +12,5 @@
         <item>Butla 5 l</item>
         <item>Więcej opcji</item>
     </string-array>
-   <string name="main_page_selected">%s page is selected</string>
+    <string name="main_page_selected">%s page is selected</string>
 </resources>

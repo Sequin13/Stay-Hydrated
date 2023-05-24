@@ -46,7 +46,6 @@ public class MemoryGame extends AppCompatActivity {
         int imageIndex = getIndexOfImage(clickedImage);
 
         if (matchedImages.contains(clickedImage)) {
-            // Kliknięty obrazek już został dopasowany
             return;
         }
 
@@ -54,24 +53,15 @@ public class MemoryGame extends AppCompatActivity {
         clickedImage.setImageResource(imageResId);
 
         if (!isClicked) {
-            // Pierwsze kliknięcie
             isClicked = true;
             lastClickedImage = clickedImage;
         } else {
-            // Drugie kliknięcie
             if (imageIndex == getIndexOfImage(lastClickedImage)) {
-                // Odkryj oba pasujące obrazy
                 clickedImage.setEnabled(false);
                 lastClickedImage.setEnabled(false);
                 matchedImages.add(clickedImage);
                 matchedImages.add(lastClickedImage);
-
-                if (matchedImages.size() == images.size()) {
-                    // Wszystkie obrazki dopasowane, wykonaj odpowiednie działania
-                    // np. wyświetl komunikat o wygranej
-                }
             } else {
-                // Odstaw obrazy do stanu początkowego po krótkim opóźnieniu
                 final ImageView finalClickedImage = clickedImage;
                 final ImageView finalLastClickedImage = lastClickedImage;
                 new Handler().postDelayed(new Runnable() {
@@ -82,15 +72,12 @@ public class MemoryGame extends AppCompatActivity {
                     }
                 }, 1000);
             }
-
-            // Zresetuj flagi
             isClicked = false;
             lastClickedImage = null;
         }
     }
 
     private int getIndexOfImage(ImageView imageView) {
-        // Znajdź indeks obrazka na podstawie ImageView
         ImageView[] imageViews = {
                 findViewById(R.id.imageView1),
                 findViewById(R.id.imageView2),
@@ -128,7 +115,6 @@ public class MemoryGame extends AppCompatActivity {
                 return R.drawable.waterdrop;
             case 6:
                 return R.drawable.ocean;
-            // Dodaj pozostałe przypadki dla innych obrazków
             default:
                 return R.drawable.questionmark;
         }
