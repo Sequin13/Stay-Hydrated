@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
    private final int ID_GAME=2;
    private final int ID_ACHIEVENETS=3;
    private final int ID_ACCOUNT=4;
+   private DataBase database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +51,26 @@ public class MainActivity extends AppCompatActivity {
         });
         bottomNavigation.setCount(ID_ACHIEVENETS,"4");
         bottomNavigation.show(ID_HOME,true);
+
+
+        //{
+        database = new DataBase(this);
+        database.open();
+        database.createTableOfUsers();
+        database.insertData("Marek","Czekajski", "M", 48, 3000);
+        database.insertData("Agata","Kudła", "K",20, 2000);
+        database.printData();
+        database.deleteDatabase(this); //chwilowo
+        //} - chwilowo -  testowanie bazy danych
+
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        database.close();
+    }
+
+
     public void waterOnClick (View view)
     {
         Intent i = new Intent(this, Water.class);
