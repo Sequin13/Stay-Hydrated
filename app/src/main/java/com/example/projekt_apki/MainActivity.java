@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 
 public class MainActivity extends AppCompatActivity {
-   private final int ID_HOME=1;
+   private final int ID_Water=1;
    private final int ID_GAME=2;
    private final int ID_ACHIEVENETS=3;
    private final int ID_ACCOUNT=4;
@@ -22,14 +22,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         MeowBottomNavigation bottomNavigation=findViewById(R.id.bottomNavigation);
 
-        bottomNavigation.add(new MeowBottomNavigation.Model(ID_HOME, R.drawable.home));
+        bottomNavigation.add(new MeowBottomNavigation.Model(ID_Water, R.drawable.ic_baseline_water_drop_24));
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_GAME, R.drawable.game));
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_ACHIEVENETS, R.drawable.achievements));
-        bottomNavigation.add(new MeowBottomNavigation.Model(ID_ACCOUNT, R.drawable.account));
+        bottomNavigation.add(new MeowBottomNavigation.Model(ID_ACCOUNT, R.drawable.sett));
 
         bottomNavigation.setOnClickMenuListener((new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
+                switch (item.getId()) {
+                    case ID_GAME:
+                        Intent gameIntent = new Intent(MainActivity.this, GamesLobby.class);
+                        startActivity(gameIntent);
+                        break;
+                    case ID_ACHIEVENETS:
+                        Intent achievementsIntent = new Intent(MainActivity.this, Achievements.class);
+                        startActivity(achievementsIntent);
+                        break;
+                }
             }
         }));
         bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
@@ -37,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             public void onShowItem(MeowBottomNavigation.Model item) {
                 String name;
                 switch (item.getId()){
-                    case ID_HOME:name="Home";
+                    case ID_Water:name="Water";
                     break;
                     case ID_GAME:name="Games";
                         break;
@@ -50,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         bottomNavigation.setCount(ID_ACHIEVENETS,"4");
-        bottomNavigation.show(ID_HOME,true);
+        bottomNavigation.show(ID_Water,true);
 
 
         //{

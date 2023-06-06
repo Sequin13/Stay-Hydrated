@@ -28,8 +28,9 @@
             android:layout_marginTop="60dp"
             android:background="@drawable/corners"
             android:drawableLeft="@drawable/ic_baseline_water_drop_24"
+            android:text="Dodaj"
             android:onClick="waterOnClick"
-            android:padding="45dp" />
+            android:padding="42dp" />
 
         <Button
             android:id="@+id/date"
@@ -43,6 +44,7 @@
 
 
     </LinearLayout>
+
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
         android:layout_width="match_parent"
