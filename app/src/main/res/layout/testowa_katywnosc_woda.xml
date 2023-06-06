@@ -6,10 +6,55 @@
     android:layout_height="match_parent">
 
 
+    <ImageView
+        android:id="@+id/water_drop"
+        android:layout_width="291dp"
+        android:layout_height="445dp"
+        android:contentDescription="TODO"
+        android:elevation="40dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/wateronmetter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055" />
 
+    <com.scwang.wave.MultiWaveHeader
+        android:layout_width="157dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="216dp"
+        android:rotation="180"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
+    <ImageView
+        android:layout_width="355dp"
+        android:layout_height="59dp"
+        android:src="@drawable/aa"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="279dp" />
 
+    <ImageView
+        android:layout_width="355dp"
+        android:layout_height="59dp"
 
+        android:src="@drawable/aa"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="279dp" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="355dp"-->
+<!--        android:layout_height="59dp"-->
+<!--        android:src="@drawable/aa"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        tools:layout_editor_absoluteX="29dp"-->
+<!--        tools:layout_editor_absoluteY="279dp" />-->
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
         android:layout_width="match_parent"
@@ -17,7 +62,7 @@
         android:layout_marginTop="660dp"
         android:id="@+id/bottomNavigation"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:mbn_shadowColor="@color/black"
+        app:mbn_shadowColor="#2F93E7"
         app:mbn_backgroundBottomColor="#40C4FF"
         app:mbn_circleColor="#FFFFFF"
         app:mbn_countBackgroundColor="#448AFF"

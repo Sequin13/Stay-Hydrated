@@ -111,8 +111,6 @@ public class MemoryGame extends AppCompatActivity {
                 return R.drawable.cupofwater;
             case 4:
                 return R.drawable.mauzer;
-            case 5:
-                return R.drawable.waterdrop;
             case 6:
                 return R.drawable.ocean;
             default:
