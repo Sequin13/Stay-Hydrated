@@ -3,28 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Achievements">
-
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="achievements"/>
+    android:layout_height="match_parent">
 
 
-<com.etebarian.meowbottomnavigation.MeowBottomNavigation
-        android:id="@+id/bottomNavigation"
+
+
+
+
+
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="660dp"
+        android:id="@+id/bottomNavigation"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:mbn_shadowColor="@color/black"
         app:mbn_backgroundBottomColor="#40C4FF"
         app:mbn_circleColor="#FFFFFF"
         app:mbn_countBackgroundColor="#448AFF"
         app:mbn_countTextColor="@color/white"
         app:mbn_defaultIconColor="@color/white"
-        app:mbn_selectedIconColor="#40C4FF"
-        app:mbn_shadowColor="@color/black"
-        tools:layout_editor_absoluteX="0dp" />
-
-
+        app:mbn_selectedIconColor="#40C4FF"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,14 +1,15 @@
 package com.example.projekt_apki;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceFragmentCompat;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 
-public class GamesLobby extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
     private final int ID_HOME=1;
     private final int ID_GAME=2;
     private final int ID_ACHIEVENETS=3;
@@ -16,7 +17,7 @@ public class GamesLobby extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_games_lobby);
+        setContentView(R.layout.settings_activity);
         MeowBottomNavigation bottomNavigation=findViewById(R.id.bottomNavigation);
 
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_HOME, R.drawable.ic_baseline_water_drop_24));
@@ -28,16 +29,16 @@ public class GamesLobby extends AppCompatActivity {
             public void onClickItem(MeowBottomNavigation.Model item) {
                 switch (item.getId()) {
                     case ID_GAME:
-                        Intent gameIntent = new Intent(GamesLobby.this, GamesLobby.class);
+                        Intent gameIntent = new Intent(SettingsActivity.this, GamesLobby.class);
                         startActivity(gameIntent);
                         break;
                     case ID_ACHIEVENETS:
-                        Intent achievementsIntent = new Intent(GamesLobby.this, Achievements.class);
+                        Intent achievementsIntent = new Intent(SettingsActivity.this,Achievements.class);
                         startActivity(achievementsIntent);
                         break;
 
                     case ID_HOME:
-                        Intent home = new Intent(GamesLobby.this, MainActivity.class);
+                        Intent home = new Intent(SettingsActivity.this, MainActivity.class);
                         startActivity(home);
                         break;
                 }
@@ -61,14 +62,8 @@ public class GamesLobby extends AppCompatActivity {
             }
         });
         bottomNavigation.setCount(ID_ACHIEVENETS,"4");
-        bottomNavigation.show(ID_GAME,true);
-    }
+        bottomNavigation.show(ID_ACCOUNT,true);
 
-    public void memoryGameOnClick (View view)
-    {
-        Intent i = new Intent(this, MemoryGame.class);
-        startActivity(i);
     }
-
 
 }
