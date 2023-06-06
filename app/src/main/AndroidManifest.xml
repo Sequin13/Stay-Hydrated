@@ -32,6 +32,20 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".clickerActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".GameActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Achievements"
             android:exported="false">
             <meta-data
