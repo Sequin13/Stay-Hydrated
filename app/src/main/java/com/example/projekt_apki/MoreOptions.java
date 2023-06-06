@@ -41,7 +41,7 @@ public class MoreOptions extends AppCompatActivity {
         });
     }
     public void plusClick(View v) {
-        Intent i = new Intent(this, Water.class);
+        Intent i = new Intent(this, MainActivity.class);
         String waterValueString = textView2.getText().toString();
         int waterValue = Integer.parseInt(waterValueString);
         i.putExtra("watervalue", waterValue);
