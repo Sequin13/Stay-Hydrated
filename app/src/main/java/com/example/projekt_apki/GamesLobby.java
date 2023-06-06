@@ -69,6 +69,17 @@ public class GamesLobby extends AppCompatActivity {
         Intent i = new Intent(this, MemoryGame.class);
         startActivity(i);
     }
+    public void labiryntOnClick (View view)
+    {
+        Intent i = new Intent(this, GameActivity.class);
+        startActivity(i);
+    }
+    public void clickerOnClick (View view)
+    {
+        Intent i = new Intent(this, clickerActivity.class);
+        startActivity(i);
+    }
+
 
 
 }
