@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tv, tv2, tv3Goal;
     int goal = 3000;
     private static final String CHANNEL_ID = "my_channel";
-
+    private SessionManager sessionManager;
     public int idOfUser;
 
     @Override
@@ -54,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_GAME, R.drawable.game));
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_ACHIEVENETS, R.drawable.achievements));
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_ACCOUNT, R.drawable.sett));
+
+
+
 
         bottomNavigation.setOnClickMenuListener((new MeowBottomNavigation.ClickListener() {
             @Override
@@ -99,11 +102,13 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.setCount(ID_ACHIEVENETS, "4");
         bottomNavigation.show(ID_Water, true);
 
-        database = new DataBase(this);
-        database.open();
-        database.createTableOfUsers();
+        sessionManager = SessionManager.getInstance();
+        String loggedInUser = sessionManager.getLoggedInUser();
+        int userGoal = sessionManager.getUserGoal();
+
         tv3Goal = findViewById(R.id.goal);
-        database.deleteDatabase(this); //chwilowo
+        tv3Goal.setText(String.valueOf(userGoal));
+
 
         Spinner spinner = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -147,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         tv = findViewById(R.id.howMuchWater);
         sumOfWater = 0;
         try {
-            sumOfWater = Integer.parseInt(tv.getText().toString());
+            sumOfWater = Integer.parseInt(String.valueOf(tv.getText()));
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
