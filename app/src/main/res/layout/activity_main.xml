@@ -4,9 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DBF3F6"
+    android:background="#E8F1FF"
     tools:context=".MainActivity">
 
+
+    <com.scwang.wave.MultiWaveHeader
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_marginTop="4dp"
+        android:rotation="180"
+        android:rotationX="180"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingClass"></com.scwang.wave.MultiWaveHeader>
 
     <ImageView
         android:id="@+id/water_drop"
@@ -25,14 +37,15 @@
     <com.scwang.wave.MultiWaveHeader
         android:id="@+id/multiWaveHeader"
         android:layout_width="157dp"
-        android:layout_height="65dp"
+        android:layout_height="59dp"
         android:layout_marginTop="216dp"
         android:rotation="180"
         app:layout_constraintBottom_toTopOf="@+id/imageView13"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingClass" />
 
     <ImageView
@@ -93,9 +106,6 @@
         app:layout_constraintVertical_bias="0.445">
 
         <TextView
-            android:gravity="center"
-            android:textSize="20dp"
-            android:textStyle="bold"
             android:id="@+id/howMuchWater"
             android:layout_width="120dp"
             android:layout_height="40dp"
@@ -104,6 +114,9 @@
             android:layout_marginTop="62dp"
             android:layout_marginBottom="79dp"
             android:background="@drawable/input"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/water_drop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.226"
@@ -132,7 +145,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:mbn_backgroundBottomColor="#40C4FF"
+        app:mbn_backgroundBottomColor="#9FC6FF"
         app:mbn_circleColor="#FFFFFF"
         app:mbn_countBackgroundColor="#448AFF"
         app:mbn_countTextColor="@color/white"
@@ -178,6 +191,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="/"
+        android:textColor="#92000000"
         android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
@@ -188,51 +202,51 @@
 
     <Button
         android:id="@+id/plus"
-        android:layout_width="55dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="544dp"
+        android:layout_width="72dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="123dp"
         android:background="@drawable/corners"
         android:onClick="plusOnClick"
         android:text="+"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.34"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="120dp"
-        android:layout_height="47dp"
+        android:layout_width="144dp"
+        android:layout_height="60dp"
         android:layout_marginTop="60dp"
-
         android:onClick="resetClick"
         android:text="reset"
-        android:textSize="8sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintHorizontal_bias="0.902"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778" />
+        app:layout_constraintVertical_bias="0.798" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="120dp"
-        android:layout_height="47dp"
+        android:layout_width="144dp"
+        android:layout_height="60dp"
         android:layout_marginTop="60dp"
         android:layout_marginRight="60dp"
         android:onClick="acceptClick"
-        android:text="akcept"
-        android:textSize="8sp"
+        android:text="accept"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778" />
+        app:layout_constraintVertical_bias="0.798" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
