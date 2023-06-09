@@ -4,213 +4,235 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DBF3F6"
     tools:context=".MainActivity">
 
 
-
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="56dp"
-        android:layout_height="63dp"
-        android:text="ML"
-        android:textSize="30sp"
-
-
+    <ImageView
+        android:id="@+id/water_drop"
+        android:layout_width="291dp"
+        android:layout_height="445dp"
+        android:contentDescription="TODO"
+        android:elevation="40dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/wateronmetter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/howMuchWater2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.089" />
-
-
-    <TextView
-        android:id="@+id/goal"
-        android:layout_width="160dp"
-        android:layout_height="72dp"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.207"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075" />
+        app:layout_constraintVertical_bias="0.055" />
 
-    <TextView
-        android:id="@+id/howMuchWater2"
-        android:layout_width="160dp"
-        android:layout_height="72dp"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/multiWaveHeader"
+        android:layout_width="157dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="216dp"
+        android:rotation="180"
+        app:layout_constraintBottom_toTopOf="@+id/imageView13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.207"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25"
-        tools:ignore="DuplicateIds" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingClass" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="62dp"
-        android:layout_height="32dp"
-        android:onClick="acceptClick"
-        android:text="accept"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="355dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="263dp"
+        android:src="@drawable/aa"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.415"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.449" />
-
-
-
-
-
-
-    <TextView
-        android:id="@+id/howMuchWater"
-        android:layout_width="107dp"
-        android:layout_height="41dp"
-        android:text="0"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.405" />
-
-    <Button
-        android:id="@+id/reset"
-        android:layout_width="62dp"
-        android:layout_height="32dp"
-        android:onClick="resetClick"
-        android:text="reset"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.415"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.383" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="56dp"
-        android:layout_height="63dp"
-        android:layout_marginEnd="136dp"
-        android:text="ML"
-
-
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toEndOf="@+id/goal"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26" />
-
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="117dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="8dp"
-        android:text="You need to drink "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/howMuchWater2"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="62dp"
-        android:layout_height="32dp"
-        android:onClick="acceptClick"
-        android:text="accept"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.415"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.449" />
-
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="68dp"
-        android:layout_height="62dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.953"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.418"
+        app:layout_constraintTop_toTopOf="@+id/water_drop"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/plus"
-        android:layout_width="71dp"
-        android:layout_height="90dp"
-        android:onClick="plusOnClick"
-        android:text="@string/plus"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.72"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.418" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="355dp"
 
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="62dp"
-        android:layout_height="32dp"
-        android:onClick="resetClick"
-        android:text="reset"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="59dp"
+        android:layout_marginTop="263dp"
+        android:layout_marginBottom="124dp"
+        android:src="@drawable/aa"
+        app:layout_constraintBottom_toBottomOf="@+id/water_drop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.415"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.383" />
+        app:layout_constraintTop_toTopOf="@+id/water_drop"
+        tools:ignore="MissingConstraints" />
+
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="117dp"
-        android:layout_height="26dp"
-        android:layout_marginBottom="8dp"
-        android:text="Today you drank:"
-        app:layout_constraintBottom_toTopOf="@+id/howMuchWater2"
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0%"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/multiWaveHeader" />
 
 
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="371dp"
+        android:layout_height="122dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/aa"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:layout_constraintVertical_bias="0.445">
 
+        <TextView
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:id="@+id/howMuchWater"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="99dp"
+            android:layout_marginTop="62dp"
+            android:layout_marginBottom="79dp"
+            android:background="@drawable/input"
+            app:layout_constraintBottom_toBottomOf="@+id/water_drop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.226"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView13"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:layout_width="39dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="-3dp"
+            android:gravity="center"
+            android:text="ML"
+            android:textSize="20dp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="43dp"
+            android:layout_height="46dp"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="660dp"
-        android:id="@+id/bottomNavigation"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:mbn_shadowColor="@color/black"
         app:mbn_backgroundBottomColor="#40C4FF"
         app:mbn_circleColor="#FFFFFF"
         app:mbn_countBackgroundColor="#448AFF"
         app:mbn_countTextColor="@color/white"
         app:mbn_defaultIconColor="@color/white"
-        app:mbn_selectedIconColor="#40C4FF"/>
+        app:mbn_selectedIconColor="#40C4FF"
+        app:mbn_shadowColor="#2F93E7" />
 
-</androidx.constraintlayout.widget.ConstraintLayout
-    >
+    <TextView
+        android:id="@+id/goal"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="64dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="79dp"
+        android:background="@drawable/input"
+        app:layout_constraintBottom_toBottomOf="@+id/water_drop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView13"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/howMuchWater2"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="79dp"
+        android:background="@drawable/input"
+        app:layout_constraintBottom_toBottomOf="@+id/water_drop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.226"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView13"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/plus"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="544dp"
+        android:background="@drawable/corners"
+        android:onClick="plusOnClick"
+        android:text="+"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="120dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="60dp"
+
+        android:onClick="resetClick"
+        android:text="reset"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.778" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="120dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="60dp"
+        android:onClick="acceptClick"
+        android:text="akcept"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.778" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

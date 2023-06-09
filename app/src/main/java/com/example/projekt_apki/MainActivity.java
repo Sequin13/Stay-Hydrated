@@ -1,37 +1,54 @@
 package com.example.projekt_apki;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import android.annotation.SuppressLint;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.example.projekt_apki.Achievements;
+import com.example.projekt_apki.DataBase;
+import com.example.projekt_apki.GamesLobby;
+import com.example.projekt_apki.MoreOptions;
+import com.example.projekt_apki.R;
+import com.example.projekt_apki.SettingsActivity;
 
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
-   private final int ID_Water=1;
-   private final int ID_GAME=2;
-   private final int ID_ACHIEVENETS=3;
-   private final int ID_ACCOUNT=4;
-   private DataBase database;
+    private final int ID_Water = 1;
+    private final int ID_GAME = 2;
+    private final int ID_ACHIEVENETS = 3;
+    private final int ID_ACCOUNT = 4;
+    private DataBase database;
     public String wybranaOpcja;
     int sumOfWater = 0;
     TextView tv, tv2, tv3Goal;
     int goal = 3000;
+    private static final String CHANNEL_ID = "my_channel";
+
+    public int idOfUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MeowBottomNavigation bottomNavigation=findViewById(R.id.bottomNavigation);
+
+        MeowBottomNavigation bottomNavigation = findViewById(R.id.bottomNavigation);
 
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_Water, R.drawable.ic_baseline_water_drop_24));
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_GAME, R.drawable.game));
@@ -61,34 +78,32 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onShowItem(MeowBottomNavigation.Model item) {
                 String name;
-                switch (item.getId()){
-                    case ID_Water:name="Water";
-                    break;
-                    case ID_GAME:name="Games";
+                switch (item.getId()) {
+                    case ID_Water:
+                        name = "Water";
                         break;
-                    case ID_ACHIEVENETS:name="Achievements";
+                    case ID_GAME:
+                        name = "Games";
                         break;
-                    case ID_ACCOUNT:name="Account";
-                    break;
-                    default: name="";
+                    case ID_ACHIEVENETS:
+                        name = "Achievements";
+                        break;
+                    case ID_ACCOUNT:
+                        name = "Account";
+                        break;
+                    default:
+                        name = "";
                 }
             }
         });
-        bottomNavigation.setCount(ID_ACHIEVENETS,"4");
-        bottomNavigation.show(ID_Water,true);
+        bottomNavigation.setCount(ID_ACHIEVENETS, "4");
+        bottomNavigation.show(ID_Water, true);
 
-
-        //{
         database = new DataBase(this);
         database.open();
         database.createTableOfUsers();
-        database.insertData("Marek","Czekajski", "M", 48, 3000);
-        database.insertData("Agata","Kudła", "K",20, 2000);
-        database.printData();
+        tv3Goal = findViewById(R.id.goal);
         database.deleteDatabase(this); //chwilowo
-        //} - chwilowo -  testowanie bazy danych
-
-        //TODO funkcjonalność wateractivity
 
         Spinner spinner = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -102,7 +117,12 @@ public class MainActivity extends AppCompatActivity {
         tv2 = findViewById(R.id.howMuchWater2);
         tv2.setText("0");
         tv = findViewById(R.id.howMuchWater);
-        int ilosc = Integer.parseInt(tv.getText().toString());
+        int ilosc = 0;
+        try {
+            ilosc = Integer.parseInt(tv.getText().toString());
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
         int sum = ilosc + waterValue;
         tv.setText(String.valueOf(sum));
 
@@ -120,14 +140,17 @@ public class MainActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
-        tv3Goal = findViewById(R.id.goal);
-        tv3Goal.setText("3000"); // chwilowo
     }
+
     @SuppressLint("SetTextI18n")
     public void plusOnClick(View v) {
         tv = findViewById(R.id.howMuchWater);
-        sumOfWater = Integer.parseInt(tv.getText().toString());
+        sumOfWater = 0;
+        try {
+            sumOfWater = Integer.parseInt(tv.getText().toString());
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
         switch (wybranaOpcja) {
             case "Szklanka 200 ml":
                 sumOfWater += 200;
@@ -154,29 +177,53 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(String.valueOf(sumOfWater));
         tv.invalidate();
     }
-    public void resetClick(View v)
-    {
-        tv=findViewById(R.id.howMuchWater);
-        tv2=findViewById(R.id.howMuchWater2);
+
+    public void resetClick(View v) {
+        tv = findViewById(R.id.howMuchWater);
+        tv2 = findViewById(R.id.howMuchWater2);
         tv.setText("0");
     }
+
     public void acceptClick(View v) throws InterruptedException {
         String temp;
         String temp2;
-        tv=findViewById(R.id.howMuchWater);
-        tv2=findViewById(R.id.howMuchWater2);
+        tv = findViewById(R.id.howMuchWater);
+        tv2 = findViewById(R.id.howMuchWater2);
         temp = tv.getText().toString();
-        temp2=tv2.getText().toString();
+        temp2 = tv2.getText().toString();
 
-        temp=String.valueOf(Integer.parseInt(temp)+Integer.parseInt(temp2));
+        temp = String.valueOf(Integer.parseInt(temp) + Integer.parseInt(temp2));
 
         tv.setText("0");
         tv2.setText(temp);
-
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
         database.close();
+    }
+
+    private void showNotification() {
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "My Channel";
+            String description = "Opis kanału powiadomień";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            channel.enableLights(true);
+            channel.setLightColor(Color.RED);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_baseline_water_drop_24)
+                .setContentTitle("Powiadomienie")
+                .setContentText("Przykładowa treść powiadomienia")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        notificationManager.notify(0, builder.build());
     }
 }
