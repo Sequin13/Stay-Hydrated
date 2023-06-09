@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:mbn_backgroundBottomColor="#40C4FF"
+        app:mbn_backgroundBottomColor="#9FC6FF"
         app:mbn_circleColor="#FFFFFF"
         app:mbn_countBackgroundColor="#448AFF"
         app:mbn_countTextColor="@color/white"
