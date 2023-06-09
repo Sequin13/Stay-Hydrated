@@ -93,7 +93,6 @@
         app:layout_constraintVertical_bias="0.445">
 
         <TextView
-            android:text="1200"
             android:gravity="center"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -161,6 +160,9 @@
     <TextView
         android:id="@+id/howMuchWater2"
         android:layout_width="120dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20dp"
         android:layout_height="40dp"
         android:layout_marginTop="64dp"
         android:layout_marginBottom="79dp"
@@ -172,22 +174,32 @@
         app:layout_constraintTop_toTopOf="@+id/imageView13"
         app:layout_constraintVertical_bias="0.0" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:layout_constraintVertical_bias="0.0" />
+
     <Button
         android:id="@+id/plus"
         android:layout_width="55dp"
         android:layout_height="50dp"
-        android:layout_marginTop="358dp"
-        android:layout_marginBottom="329dp"
+        android:layout_marginTop="544dp"
         android:background="@drawable/corners"
         android:onClick="plusOnClick"
         android:text="+"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigation"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.985"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.03"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -195,13 +207,13 @@
         android:layout_width="120dp"
         android:layout_height="47dp"
         android:layout_marginTop="60dp"
-        android:layout_marginRight="60dp"
+
         android:onClick="resetClick"
         android:text="reset"
         android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.876"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.778" />
@@ -212,12 +224,12 @@
         android:layout_height="47dp"
         android:layout_marginTop="60dp"
         android:layout_marginRight="60dp"
-        android:onClick="resetClick"
+        android:onClick="acceptClick"
         android:text="akcept"
         android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.305"
+        app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.778" />
