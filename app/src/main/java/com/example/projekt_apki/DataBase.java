@@ -106,6 +106,17 @@ public class DataBase {
         return userId;
     }
 
+    public void updateUserGoal(String user, int goal) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_GOAL, goal);
+
+        String whereClause = USER + " = ?";
+        String[] whereArgs = {user};
+
+        database.update(TABLE_NAME, contentValues, whereClause, whereArgs);
+    }
+
+
     public Cursor getData() {
         return database.rawQuery("SELECT * FROM " + TABLE_NAME, null);
     }

@@ -115,6 +115,7 @@
             android:layout_marginBottom="79dp"
             android:background="@drawable/input"
             android:gravity="center"
+            android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/water_drop"

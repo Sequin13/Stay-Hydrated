@@ -7,9 +7,10 @@
     tools:context=".SettingsActivity">
 
     <TextView
+        android:id="@+id/textView10"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="settings"/>
+        android:text="settings" />
 
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
@@ -25,6 +26,31 @@
         app:mbn_selectedIconColor="#40C4FF"
         app:mbn_shadowColor="@color/black"
         tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/goalEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
