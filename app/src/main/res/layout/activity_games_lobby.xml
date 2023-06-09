@@ -6,54 +6,135 @@
     android:layout_height="match_parent"
     tools:context=".GamesLobby">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="413dp"
-        android:layout_height="729dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/multiWaveHeader"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_marginTop="4dp"
+        android:rotation="180"
+        android:rotationX="180"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        tools:ignore="MissingClass" >
+    </com.scwang.wave.MultiWaveHeader>
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="114dp"
-            android:layout_height="99dp"
-            android:onClick="memoryGameOnClick"
-            android:text="memories"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.084"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.117" />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Be Ready To Play"
+        android:textColor="#FFFFFF"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="101dp"
-            android:layout_height="103dp"
-            android:onClick="labiryntOnClick"
-            android:text="Button"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="164dp"
-            tools:layout_editor_absoluteY="70dp" />
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="99dp"
-            android:layout_height="105dp"
-            android:onClick="clickerOnClick"
-            android:text="Button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.908"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.109" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textView3"
+        android:text="Match Your skills "
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:paddingLeft="57dp"
+        android:paddingRight="5dp"
+        android:layout_width="293dp"
+        android:layout_height="110dp"
+        android:background="@drawable/corners"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.845" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="101dp"
+        android:layout_height="103dp"
+        android:paddingLeft="25dp"
+        android:drawableLeft="@drawable/ic_baseline_cloud_download_24"
+        android:background="@drawable/buttoncorner_for_game"
+        android:onClick="labiryntOnClick"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.474"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:text="Try Your Best in Dodge "
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:paddingLeft="57dp"
+        android:paddingRight="5dp"
+        android:layout_width="293dp"
+        android:layout_height="110dp"
+        android:background="@drawable/corners"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.544" />
+
+    <Button
+        android:drawableRight="@drawable/memo"
+        android:paddingRight="25dp"
+        android:id="@+id/button3"
+        android:layout_width="101dp"
+        android:layout_height="103dp"
+        android:background="@drawable/buttoncorner_for_game"
+        android:onClick="memoryGameOnClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.171" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="99dp"
+        android:layout_height="105dp"
+        android:background="@drawable/buttoncorner_for_game"
+        android:onClick="clickerOnClick"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.682" />
+
+    <TextView
+        android:text="Check Your Memory Skills ! "
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:paddingLeft="57dp"
+        android:paddingRight="5dp"
+        android:layout_width="293dp"
+        android:layout_height="110dp"
+        android:background="@drawable/corners"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.253" />
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
         android:id="@+id/bottomNavigation"
