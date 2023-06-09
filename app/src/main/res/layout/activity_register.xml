@@ -13,47 +13,83 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/shape"/>
+
     <TextView
-        android:textStyle="italic"
-        android:textSize="25dp"
-        android:transitionName="splash_image"
-        android:layout_gravity="center"
-        android:textAlignment="center"
-        android:layout_marginBottom="10dp"
-        android:textColor="@color/black"
-        android:text="Welcome Back!"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:text="Create your account"
+        android:layout_marginTop="-140dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="italic"
+        android:transitionName="splash_image" />
+
     <ImageView
         android:layout_width="wrap_content"
-        android:transitionName="splash_text"
         android:layout_height="wrap_content"
-        android:src="@drawable/login_draw"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        android:layout_gravity="center_horizontal"/>
+        android:src="@drawable/login_draw"
+        android:transitionName="splash_text" />
 
     <EditText
-        android:id="@+id/userName"
+        android:id="@+id/name"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:background="@drawable/input"
         android:textColor="@color/black"
+        android:background="@drawable/input"
         android:hint="Username"
         android:paddingLeft="20dp" />
 
+
     <EditText
-        android:id="@+id/haselko"
+        android:id="@+id/wiek"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="@drawable/input"
         android:textColor="@color/black"
-        android:hint="Password"
+        android:background="@drawable/input"
+        android:hint="Wiek"
         android:paddingLeft="20dp" />
 
+    <EditText
+        android:id="@+id/plec"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:background="@drawable/input"
+        android:hint="Username"
+        android:paddingLeft="20dp" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:background="@drawable/input"
+        android:hint="Username"
+        android:paddingLeft="20dp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:background="@drawable/input"
+        android:hint="Plec"
+        android:paddingLeft="20dp" />
 
     <Button
         android:id="@+id/register_button"
@@ -62,29 +98,14 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="@drawable/login_btn"
-        android:onClick="ButtonOnClick"
-        android:text="Login" />
+        android:onClick="RegisterClick"
+        android:text="Register" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dont't have an account?"
-            android:textColor="@color/black"/>
-
-        <TextView
-            android:id="@+id/signupClick"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="RegisterOnClick"
-            android:text=" Sign up"
-            android:textColor="#373D5E"
-            android:textStyle="bold" />
-    </LinearLayout>
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>
