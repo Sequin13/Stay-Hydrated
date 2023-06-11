@@ -35,61 +35,92 @@
         android:src="@drawable/login_draw"
         android:transitionName="splash_text" />
 
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="360dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/black"
-        android:background="@drawable/input"
-        android:hint="Username"
-        android:paddingLeft="20dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/black"
+                android:background="@drawable/input"
+                android:hint="Username"
+                android:textColorHint="@color/black"
+                android:paddingLeft="20dp" />
 
 
-    <EditText
-        android:id="@+id/wiek"
-        android:layout_width="360dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/black"
-        android:background="@drawable/input"
-        android:hint="Wiek"
-        android:paddingLeft="20dp" />
+            <EditText
+                android:id="@+id/wiek"
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:background="@drawable/input"
+                android:hint="Age"
+                android:textColorHint="@color/black"
+                android:paddingLeft="20dp" />
 
-    <EditText
-        android:id="@+id/plec"
-        android:layout_width="360dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/black"
-        android:background="@drawable/input"
-        android:hint="Username"
-        android:paddingLeft="20dp" />
+            <EditText
+                android:id="@+id/plec"
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/black"
+                android:background="@drawable/input"
+                android:textColorHint="@color/black"
+                android:hint="Gender"
+                android:paddingLeft="20dp" />
 
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="360dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/black"
-        android:background="@drawable/input"
-        android:hint="Username"
-        android:paddingLeft="20dp" />
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/black"
+                android:background="@drawable/input"
+                android:hint="Login"
+                android:textColorHint="@color/black"
+                android:paddingLeft="20dp" />
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="360dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/black"
-        android:background="@drawable/input"
-        android:hint="Plec"
-        android:paddingLeft="20dp" />
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/black"
+                android:background="@drawable/input"
+                android:hint="Password"
+                android:textColorHint="@color/black"
+                android:paddingLeft="20dp" />
+
+            <EditText
+                android:id="@+id/passwordconfirm"
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/black"
+                android:background="@drawable/input"
+                android:hint="Confirm Password"
+                android:textColorHint="@color/black"
+                android:paddingLeft="20dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
 
     <Button
         android:id="@+id/register_button"
