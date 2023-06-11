@@ -7,8 +7,8 @@
     android:background="#E8F1FF"
     tools:context=".MainActivity">
 
-
     <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/multiWaveHeader2"
         android:layout_width="match_parent"
         android:layout_height="84dp"
         android:layout_marginTop="4dp"
@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingClass"></com.scwang.wave.MultiWaveHeader>
+        tools:ignore="MissingClass" />
 
     <ImageView
         android:id="@+id/water_drop"
@@ -141,19 +141,6 @@
 
     </LinearLayout>
 
-    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
-        android:id="@+id/bottomNavigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:mbn_backgroundBottomColor="#9FC6FF"
-        app:mbn_circleColor="#FFFFFF"
-        app:mbn_countBackgroundColor="#448AFF"
-        app:mbn_countTextColor="@color/white"
-        app:mbn_defaultIconColor="@color/white"
-        app:mbn_selectedIconColor="#40C4FF"
-        app:mbn_shadowColor="#2F93E7" />
-
     <TextView
         android:id="@+id/goal"
         android:layout_width="120dp"
@@ -251,6 +238,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.798" />
+
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:mbn_backgroundBottomColor="#9FC6FF"
+        app:mbn_circleColor="#FFFFFF"
+        app:mbn_countBackgroundColor="#448AFF"
+        app:mbn_countTextColor="@color/white"
+        app:mbn_defaultIconColor="@color/white"
+        app:mbn_selectedIconColor="#40C4FF"
+        app:mbn_shadowColor="#2F93E7" >
+
+    </com.etebarian.meowbottomnavigation.MeowBottomNavigation>
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="historyOnClick"
+        android:text="History"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.895"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
