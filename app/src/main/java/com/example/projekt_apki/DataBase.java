@@ -105,14 +105,19 @@ public class DataBase {
         cursor.close();
         return userId;
     }
+    public void updatePassword(String user,String password){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(PASSWORD, password);
+        String whereClause = USER + " = ?";
+        String[] whereArgs = {user};
+        database.update(TABLE_NAME, contentValues, whereClause, whereArgs);
+    }
 
     public void updateUserGoal(String user, int goal) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_GOAL, goal);
-
         String whereClause = USER + " = ?";
         String[] whereArgs = {user};
-
         database.update(TABLE_NAME, contentValues, whereClause, whereArgs);
     }
 
