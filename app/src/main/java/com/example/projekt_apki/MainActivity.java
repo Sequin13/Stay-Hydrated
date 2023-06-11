@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -27,6 +28,9 @@ import com.example.projekt_apki.MoreOptions;
 import com.example.projekt_apki.R;
 import com.example.projekt_apki.SettingsActivity;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
@@ -108,6 +112,8 @@ public class MainActivity extends AppCompatActivity {
 
         tv3Goal = findViewById(R.id.goal);
         tv3Goal.setText(String.valueOf(userGoal));
+
+
 
 
         Spinner spinner = findViewById(R.id.spinner);
@@ -199,8 +205,22 @@ public class MainActivity extends AppCompatActivity {
 
         temp = String.valueOf(Integer.parseInt(temp) + Integer.parseInt(temp2));
 
+        Thread.sleep(50);
+        String loggedInUser = sessionManager.getLoggedInUser();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        String currentDateAndTime = sdf.format(new Date());
+
+        DataBase database = new DataBase(this);
+        database.open();
+        database.createTableOfCurrentlyData();
+        int currentWater = Integer.parseInt(tv.getText().toString());
+        int currentWaterTotal = Integer.parseInt(tv2.getText().toString()) + currentWater;
+        database.insertCurrentlyData(loggedInUser, currentWater, currentWaterTotal, currentDateAndTime);
+        database.close();
+
         tv.setText("0");
-        tv2.setText(temp);
+        tv2.setText(String.valueOf(currentWaterTotal));
+
     }
 
     @Override
@@ -209,26 +229,10 @@ public class MainActivity extends AppCompatActivity {
         database.close();
     }
 
-    private void showNotification() {
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "My Channel";
-            String description = "Opis kanału powiadomień";
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
-            channel.setDescription(description);
-            channel.enableLights(true);
-            channel.setLightColor(Color.RED);
-            notificationManager.createNotificationChannel(channel);
-        }
-
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_baseline_water_drop_24)
-                .setContentTitle("Powiadomienie")
-                .setContentText("Przykładowa treść powiadomienia")
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
-        notificationManager.notify(0, builder.build());
+    public void historyOnClick (View v)
+    {
+        Intent i= new Intent(this, HistoryActivity.class);
+        startActivity(i);
     }
+
 }
