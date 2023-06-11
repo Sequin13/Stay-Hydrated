@@ -41,6 +41,7 @@
         android:background="@drawable/input"
         android:textColor="@color/black"
         android:hint="Username"
+        android:textColorHint="#808080"
         android:paddingLeft="20dp" />
 
     <EditText
@@ -51,7 +52,9 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/input"
         android:textColor="@color/black"
+        android:inputType="textPassword"
         android:hint="Password"
+        android:textColorHint="#808080"
         android:paddingLeft="20dp" />
 
 

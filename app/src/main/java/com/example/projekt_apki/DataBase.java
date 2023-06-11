@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class DataBase {
+    private static final String COLUMN_DRANK_WATER_TOTAL = "iwwt" ;
+    private final Context context;
     private static final String DATABASE_NAME = "my.db";
     private static final int DATABASE_VERSION = 1;
     private static final String TABLE_NAME = "pierwszaBaza";
@@ -29,6 +31,7 @@ public class DataBase {
 
     public DataBase(Context context) {
         dbHelper = new DatabaseHelper(context);
+        this.context = context;
     }
 
     public void open() {
@@ -40,12 +43,48 @@ public class DataBase {
     }
 
     public void createTableOfCurrentlyData() {
-        String createTableQuery = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME2 +" (" +
-                COLUMN_ID +" INT, "+
-                COLUMN_DRANK_WATER +" INT, " +
-                COLUMN_TIME +" DATETIME)";
+        String createTableQuery = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME2 + " (" +
+                COLUMN_ID + " INT, " +
+                COLUMN_DRANK_WATER + " INT, " +
+                COLUMN_DRANK_WATER_TOTAL + " INT, " +
+                COLUMN_TIME + " TEXT(200))";
         database.execSQL(createTableQuery);
     }
+
+
+    public void insertCurrentlyData(String user, int drankWater, int drankWaterTotal, String time) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_ID, getUserId(user));
+        contentValues.put(COLUMN_DRANK_WATER, drankWater);
+        contentValues.put(COLUMN_DRANK_WATER_TOTAL, drankWaterTotal);
+        contentValues.put(COLUMN_TIME, time);
+        database.insert(TABLE_NAME2, null, contentValues);
+    }
+
+    public void deleteTableOfUsers() {
+        String deleteTableQuery = "DROP TABLE IF EXISTS " + TABLE_NAME2;
+        database.execSQL(deleteTableQuery);
+    }
+
+
+
+    public void printCurrentlyData(String user) {
+        String query = "SELECT * FROM " + TABLE_NAME2 + " WHERE " + COLUMN_ID + " = ?";
+        String[] selectionArgs = {String.valueOf(getUserId(user))};
+        Cursor cursor = database.rawQuery(query, selectionArgs);
+        while (cursor.moveToNext()) {
+            int id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));
+            int drankWater = cursor.getInt(cursor.getColumnIndex(COLUMN_DRANK_WATER));
+            int drankWaterTotal = cursor.getInt(cursor.getColumnIndex(COLUMN_DRANK_WATER_TOTAL));
+            String time = cursor.getString(cursor.getColumnIndex(COLUMN_TIME));
+            String data = "ID: " + id + ", Drank Water: " + drankWater + ", Drank Water Total: " + drankWaterTotal + ", Time: " + time;
+            ((HistoryActivity) context).addDataToLayout(data);
+        }
+        cursor.close();
+    }
+
+
+
 
     public boolean getAccess(String user, String password) {
         String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + USER + " = ? AND " + PASSWORD + " = ?";
