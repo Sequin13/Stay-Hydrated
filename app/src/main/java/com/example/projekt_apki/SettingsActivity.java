@@ -16,7 +16,7 @@ public class SettingsActivity extends AppCompatActivity {
     private final int ID_ACHIEVENETS=3;
     private final int ID_ACCOUNT=4;
 
-    private EditText goalEditText;
+    private EditText goalEditText,passwordEditText;
     private Button saveButton;
 
     @Override
@@ -79,6 +79,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         // Inicjalizacja EditText i Button
         goalEditText = findViewById(R.id.goalEditText);
+        passwordEditText=findViewById(R.id.passwordEditText);
         saveButton = findViewById(R.id.saveButton);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -86,11 +87,13 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String goalString = goalEditText.getText().toString();
                 int goal = Integer.parseInt(goalString);
+                String passString=passwordEditText.getText().toString();
 
                 // Aktualizacja wartości celu w bazie danych
                 DataBase database = new DataBase(SettingsActivity.this);
                 database.open();
                 database.updateUserGoal(SessionManager.getInstance().getLoggedInUser(), goal);
+                database.updatePassword(SessionManager.getInstance().getLoggedInUser(),passString);
                 database.close();
 
                 // Aktualizacja wartości celu w SessionManager
