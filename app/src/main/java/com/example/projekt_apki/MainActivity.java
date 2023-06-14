@@ -28,6 +28,8 @@ import com.example.projekt_apki.MoreOptions;
 import com.example.projekt_apki.R;
 import com.example.projekt_apki.SettingsActivity;
 
+import org.w3c.dom.Text;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -151,6 +153,9 @@ public class MainActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+
+
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -220,6 +225,9 @@ public class MainActivity extends AppCompatActivity {
 
         tv.setText("0");
         tv2.setText(String.valueOf(currentWaterTotal));
+
+        TextView tv4=findViewById(R.id.textView8);
+        tv4.setText(String.valueOf((Integer.parseInt(tv2.getText().toString())/Integer.parseInt(tv3Goal.getText().toString()))*100)+"%");
 
     }
 
