@@ -226,9 +226,11 @@ public class MainActivity extends AppCompatActivity {
         tv.setText("0");
         tv2.setText(String.valueOf(currentWaterTotal));
 
-        TextView tv4=findViewById(R.id.textView8);
-        tv4.setText(String.valueOf((Integer.parseInt(tv2.getText().toString())/Integer.parseInt(tv3Goal.getText().toString()))*100)+"%");
-
+        int currentWatere = Integer.parseInt(tv2.getText().toString());
+        int goal = Integer.parseInt(tv3Goal.getText().toString());
+        int progress = (currentWatere * 100) / goal;
+        TextView tv4 = findViewById(R.id.textView8);
+        tv4.setText(String.valueOf(progress) + "%");
     }
 
     @Override
